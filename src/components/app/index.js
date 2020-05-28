@@ -3,9 +3,10 @@ import SearchBar from '../searchbar';
 import { StyledApp } from './App';
 import youtube from '../../apis/youtube';
 import VideoList from '../videolist';
+import VideoDetail from '../videodetail';
 
 export default class App extends Component {
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: null };
 
   onFormSubmit = async (search) => {
     const { data } = await youtube.get('/search', {
@@ -16,14 +17,15 @@ export default class App extends Component {
     this.setState({ videos: data.items });
   };
 
-  onSelectVideo = (video) => {
-    console.log({ video });
+  onSelectVideo = (selectedVideo) => {
+    this.setState({ selectedVideo });
   };
 
   render() {
     return (
       <StyledApp>
         <SearchBar onFormSubmit={this.onFormSubmit} />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           selectVideo={this.onSelectVideo}
           videos={this.state.videos}
