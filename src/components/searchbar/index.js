@@ -8,7 +8,7 @@ import {
 } from './SearchBar';
 
 class SearchBar extends React.Component {
-  state = { search: 'tiesto' };
+  state = { search: '' };
 
   onInputChange = (event) => {
     this.setState({
