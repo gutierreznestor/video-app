@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from '../searchbar';
-import { StyledApp } from './App';
+import { StyledApp, Videos } from './App';
 import youtube from '../../apis/youtube';
 import VideoList from '../videolist';
 import VideoDetail from '../videodetail';
@@ -29,11 +29,13 @@ export default class App extends Component {
     return (
       <StyledApp>
         <SearchBar onFormSubmit={this.onFormSubmit} />
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList
-          selectVideo={this.onSelectVideo}
-          videos={this.state.videos}
-        />
+        <Videos>
+          <VideoDetail video={this.state.selectedVideo} />
+          <VideoList
+            selectVideo={this.onSelectVideo}
+            videos={this.state.videos}
+          />
+        </Videos>
       </StyledApp>
     );
   }

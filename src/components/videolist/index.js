@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoItem from '../videoitem';
+import { Container } from '../videodetail/VideoDetail';
 
 const VideoList = ({ videos = [], selectVideo }) => {
   const onSelectVideo = (video) => {
@@ -14,7 +15,7 @@ const VideoList = ({ videos = [], selectVideo }) => {
       />
     );
   });
-  return <div>{renderedList}</div>;
+  return <Container>{renderedList}</Container>;
 };
 
 export default VideoList;

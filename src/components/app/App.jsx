@@ -6,3 +6,8 @@ export const StyledApp = styled(FlexCenter)`
   font-size: ${config.fontsize};
   padding: 10px;
 `;
+
+export const Videos = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
