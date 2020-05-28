@@ -1,55 +1,24 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { FlexCenter, BaseFlexCenter, radius5 } from '../../styles/global';
+import React from 'react';
+import {
+  Search,
+  SearchForm,
+  FormField,
+  Input,
+  SubmitButton,
+} from './SearchBar';
 
-const Search = styled(FlexCenter)`
-  padding: 10px;
-  min-width: 50vw;
-`;
+class SearchBar extends React.Component {
+  state = { search: '' };
 
-const SearchForm = styled.form`
-  ${BaseFlexCenter}
-`;
-
-const Input = styled.input`
-  ${radius5};
-  padding: 5px;
-`;
-
-const SubmitButton = styled.button`
-  ${radius5};
-  padding: 5px;
-  margin-left: 5px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const FormField = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 5px;
-`;
-
-export default class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-    };
-    this.onInputChange = this.onInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  onInputChange(event) {
+  onInputChange = (event) => {
     this.setState({
       search: event.target.value,
     });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-  }
+  };
 
   render() {
     return (
@@ -57,7 +26,11 @@ export default class SearchBar extends Component {
         <SearchForm onSubmit={this.handleSubmit}>
           <label htmlFor='search'>Search video</label>
           <FormField>
-            <Input onChange={this.onInputChange} type='text'></Input>
+            <Input
+              onChange={this.onInputChange}
+              value={this.state.search}
+              type='text'
+            ></Input>
             <SubmitButton onClick={this.handleSubmit}>Search</SubmitButton>
           </FormField>
         </SearchForm>
@@ -65,3 +38,5 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+export default SearchBar;
