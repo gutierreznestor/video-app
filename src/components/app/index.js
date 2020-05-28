@@ -26,15 +26,13 @@ export default class App extends Component {
   };
 
   render() {
+    const { selectedVideo, videos } = this.state;
     return (
       <StyledApp>
         <SearchBar onFormSubmit={this.onFormSubmit} />
         <Videos>
-          <VideoDetail video={this.state.selectedVideo} />
-          <VideoList
-            selectVideo={this.onSelectVideo}
-            videos={this.state.videos}
-          />
+          <VideoDetail video={selectedVideo} />
+          <VideoList selectVideo={this.onSelectVideo} videos={videos} />
         </Videos>
       </StyledApp>
     );
