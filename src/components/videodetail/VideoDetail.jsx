@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { border, radius5, FlexCenter } from '../../styles/global';
+import { border, radius5 } from '../../styles/global';
 
 export const Container = styled.div`
   ${radius5}
