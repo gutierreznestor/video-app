@@ -14,7 +14,7 @@ export default class App extends Component {
         q: search,
       },
     });
-    this.setState({ videos: data.items });
+    this.setState({ videos: data.items, selectedVideo: data.items[0] });
   };
 
   onSelectVideo = (selectedVideo) => {
