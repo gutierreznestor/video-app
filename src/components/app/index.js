@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../searchbar';
 import { StyledApp } from './App';
 import youtube from '../../apis/youtube';
+import VideoList from '../videolist';
 
 export default class App extends Component {
   state = { videos: [] };
@@ -19,7 +20,7 @@ export default class App extends Component {
     return (
       <StyledApp>
         <SearchBar onFormSubmit={this.onFormSubmit} />
-        <p>I have {this.state.videos.length} videos</p>
+        <VideoList videos={this.state.videos} />
       </StyledApp>
     );
   }
