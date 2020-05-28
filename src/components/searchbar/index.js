@@ -16,14 +16,14 @@ class SearchBar extends React.Component {
     });
   };
 
-  handleSubmit = (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
   };
 
   render() {
     return (
       <Search>
-        <SearchForm onSubmit={this.handleSubmit}>
+        <SearchForm onSubmit={this.onSubmit}>
           <label htmlFor='search'>Search video</label>
           <FormField>
             <Input
@@ -31,7 +31,7 @@ class SearchBar extends React.Component {
               value={this.state.search}
               type='text'
             ></Input>
-            <SubmitButton onClick={this.handleSubmit}>Search</SubmitButton>
+            <SubmitButton onClick={this.onSubmit}>Search</SubmitButton>
           </FormField>
         </SearchForm>
       </Search>
