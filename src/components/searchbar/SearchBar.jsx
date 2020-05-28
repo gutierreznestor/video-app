@@ -4,6 +4,8 @@ import { FlexCenter, BaseFlexCenter, radius5 } from '../../styles/global';
 export const Search = styled(FlexCenter)`
   padding: 10px;
   min-width: 50vw;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
 `;
 
 export const SearchForm = styled.form`
