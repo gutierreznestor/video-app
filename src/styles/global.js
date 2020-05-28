@@ -17,3 +17,7 @@ export const FlexCenter = styled.div`
 export const radius5 = css`
   border-radius: 5px;
 `;
+
+export const border = css`
+  border: 1px solid #eeeeee;
+`;

@@ -16,11 +16,18 @@ export default class App extends Component {
     this.setState({ videos: data.items });
   };
 
+  onSelectVideo = (video) => {
+    console.log({ video });
+  };
+
   render() {
     return (
       <StyledApp>
         <SearchBar onFormSubmit={this.onFormSubmit} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          selectVideo={this.onSelectVideo}
+          videos={this.state.videos}
+        />
       </StyledApp>
     );
   }

@@ -1,16 +1,19 @@
 import React from 'react';
+import { Video, VideoDetail, Image } from './VideoItem';
 
-const VideoItem = ({ video }) => {
-  console.log({ video });
+const VideoItem = ({ video, selectVideo }) => {
+  const onSelectVideo = () => {
+    selectVideo(video);
+  };
 
   return (
-    <div>
-      <img
+    <Video onClick={onSelectVideo}>
+      <Image
         src={video.snippet.thumbnails.medium.url}
         alt={video.snippet.title}
       />
-      {video.snippet.title}
-    </div>
+      <VideoDetail>{video.snippet.title}</VideoDetail>
+    </Video>
   );
 };
 

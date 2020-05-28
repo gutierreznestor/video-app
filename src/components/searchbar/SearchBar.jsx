@@ -1,10 +1,15 @@
 import styled from 'styled-components';
-import { FlexCenter, BaseFlexCenter, radius5 } from '../../styles/global';
+import {
+  FlexCenter,
+  BaseFlexCenter,
+  radius5,
+  border,
+} from '../../styles/global';
 
 export const Search = styled(FlexCenter)`
   padding: 10px;
   min-width: 50vw;
-  border: 1px solid #eeeeee;
+  ${border}
   border-radius: 5px;
 `;
 
